@@ -18,5 +18,10 @@ namespace OrmTest.Controllers
         {
             return _repository.GetRecords().ToList();
         }
+
+        public void Dispose()
+        {
+            _repository.Dispose();
+        }
     }
 }
