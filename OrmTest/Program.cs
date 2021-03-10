@@ -4,10 +4,6 @@ using System.Diagnostics;
 using OrmTest.Controllers;
 using OrmTest.Models.Repositories;
 
-/*
- * TODO: check how to free memory for ado
- */
-
 namespace OrmTest
 {
     class Program
@@ -20,6 +16,7 @@ namespace OrmTest
                 Console.WriteLine("Choose ORM:");
                 Console.WriteLine("1.ADO.NET");
                 Console.WriteLine("2.Entity Framework");
+                Console.WriteLine("3.Dapper");
                 Console.WriteLine("0.Exit");
                 Console.Write("> ");
                 switch (Console.ReadLine())
@@ -29,6 +26,9 @@ namespace OrmTest
                         break;
                     case "2":
                         controller = new RecordController(new EFRecordRepository());
+                        break;
+                    case "3":
+                        controller = new RecordController(new DapperRecordRepository());
                         break;
                     default:
                         Environment.Exit(0);
