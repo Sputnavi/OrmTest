@@ -13,6 +13,20 @@ namespace OrmTest
         public string City { get; set; }
         public string Country { get; set; }
 
+        public Record()
+        {
+
+        }
+
+        public Record(int recordId, string date, string name, string city, string country)
+        {
+            RecordId = recordId;
+            Date = date;
+            Name = name;
+            City = city;
+            Country = country;
+        }
+
         public override string ToString()
         {
             return $"{nameof(RecordId)}: {RecordId}, {nameof(Date)}: {Date}, {nameof(Name)}: {Name}, {nameof(City)}: {City}, {nameof(Country)}: {Country}";

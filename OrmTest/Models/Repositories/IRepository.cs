@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrmTest.Models.Repositories
 {
-    interface IRepository : IDisposable
+    interface IRepository
     {
         IEnumerable<Record> GetRecords();
     }

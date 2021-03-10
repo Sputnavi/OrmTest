@@ -5,23 +5,18 @@ using OrmTest.Models.Repositories;
 
 namespace OrmTest.Controllers
 {
-    class RecordController : IDisposable
+    class RecordController
     {
-        IRepository repository;
+        private IRepository _repository;
 
-        public RecordController()
+        public RecordController(IRepository repository)
         {
-            repository = new EFRecordRepository();
+            _repository = repository;
         }
 
         public List<Record> GetRecords()
         {
-            return repository.GetRecords().ToList();
-        }
-
-        public void Dispose()
-        {
-            repository.Dispose();
+            return _repository.GetRecords().ToList();
         }
     }
 }
